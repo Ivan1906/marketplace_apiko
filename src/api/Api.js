@@ -24,6 +24,9 @@ export const Favorites = {
         .localStorage
         .getItem('favorites');
       this._favorites = JSON.parse(favorites);
+      if (this._favorites === null) {
+        this._favorites = [];
+      }
     } catch (e) {
       console.error(e);
     }
