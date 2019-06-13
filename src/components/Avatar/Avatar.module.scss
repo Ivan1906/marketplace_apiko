@@ -1,0 +1,103 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  font-family: Helvetica;
+  line-height: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 50%;
+}
+
+.dropdownContent{
+  display: none;
+  position: absolute;
+  width: 204px;
+  right: 0;
+  z-index: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  .header {
+    padding: 8px;
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+
+      .rightContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        
+        font-family: Helvetica;
+        font-size: 10px;
+        line-height: 20px;
+        letter-spacing: 1px;
+
+        .name {
+          color: #000000;
+        }
+
+        .email {
+          color: #979797;
+        }
+
+        .profile a {
+          margin: 0;
+          text-transform: none;
+          line-height: 20px;
+          color: #349A89;
+        }
+      }
+    }
+
+    .editProfile {
+      padding: 19px 0 7px 0;
+
+      a {
+        margin: 0;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #349A89;
+      }
+
+    }
+  }
+
+  hr {
+    border: 1px solid #E4E4E4;
+  }
+
+  .bottom {
+    padding: 8px;
+
+    a {
+      margin: 0;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #349A89;
+      cursor: pointer;
+    }
+  }
+}

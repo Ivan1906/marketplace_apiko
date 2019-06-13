@@ -1,0 +1,25 @@
+.borderInput {
+  overflow: hidden;
+  background: #F9FAFB;
+  border: 1px solid #DEDEE0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+input {
+  height: 100%;
+  background: inherit;
+  padding: 0 3.4%;
+}
+
+img {
+  margin: 0 5%;
+}

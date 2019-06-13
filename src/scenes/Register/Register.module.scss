@@ -1,0 +1,36 @@
+.blockRegister {
+  box-sizing: content-box;
+  width: 30%;
+  //height: 493px;
+  margin-top: 81px;
+  padding: 25px 24px 32px;
+}
+
+.register {
+  margin: 0 0 7%;
+  font-family: Helvetica;
+  font-size: 22px;
+  line-height: 25px;
+  color: #282828;
+}
+
+.loginNow {
+  margin: 24px 0 0 0;
+  width: calc(30% + 2* 24px);
+  height: 76px;
+  
+  span {
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #2A2A2A;
+
+    a {
+      color: #349A89;
+      text-transform: uppercase;
+    }
+  }
+}

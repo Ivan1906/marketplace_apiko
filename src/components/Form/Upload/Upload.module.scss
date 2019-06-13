@@ -1,0 +1,38 @@
+.borderInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16px;
+  overflow: hidden;
+  background: #F9FAFB;
+  border: 1px solid #DEDEE0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.showed {
+  display: none;
+}
+
+.square {
+  width: 92px;
+  height: 92px;
+  background: #E4E4E4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.horizontally {
+  width: 4px;
+  height: 38px;
+  background: #349A89;
+  border-radius: 4px;
+  transform: rotate(-90deg);
+}
+
+.vertical {
+  width: 4px;
+  height: 38px;
+  background: #349A89;
+  border-radius: 4px;
+}

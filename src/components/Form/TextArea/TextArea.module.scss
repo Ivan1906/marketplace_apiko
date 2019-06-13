@@ -1,0 +1,16 @@
+.borderInput {
+  overflow: hidden;
+  background: #F9FAFB;
+  border: 1px solid #DEDEE0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: inherit;
+  padding: 19px 3.4%;
+}

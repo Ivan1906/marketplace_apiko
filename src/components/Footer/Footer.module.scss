@@ -1,0 +1,36 @@
+.wrapper {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  height: 73px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  background: rgba(192, 196, 206, 0.127321);
+}
+
+.line {
+  position: absolute;
+  left: 14.17%;
+  right: 13.5%;
+  top: 0;
+  bottom: 98.17%;
+
+  mix-blend-mode: normal;
+  opacity: 0.19;
+  border: 0.8px solid #979797;
+}
+
+.text {
+  /*"Font Awesome 5 Brands"*/
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14.4px;
+  line-height: 17px;
+  color: #C0C4CE;
+}

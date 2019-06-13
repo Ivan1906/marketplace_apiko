@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+
+  .inputSearch {
+    display: flex;
+    overflow: hidden;
+    width: 54.62%;
+    padding-right: 5px;
+    background: #FFFFFF;
+    border-radius: 4px;
+  }
+  
+  .inputLocation {
+    display: flex;
+    overflow: hidden;
+    margin: 0 0.82%;
+    width: 23.15%;
+    padding-right: 5px;
+    background: #FFFFFF;
+    border-radius: 4px;
+  }
+  
+  .btnSearch {
+    width: 20.58%;
+    overflow: hidden;
+    cursor: pointer;
+
+    background: #3E3961;
+    border-radius: 4px;
+
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+}
+
+img {
+  margin: 0 4.82%;
+}
+
+input {
+  border: none;
+  width: 100%;
+  font-family: Helvetica;
+  font-size: 15px;
+  line-height: 31px;
+  color: rgba(123, 123, 123, 0.776523);
+}
+
+input:focus {
+  outline: none;
+}
+/*
+search 467
+location 198
+button 176
+all 855
+*/
