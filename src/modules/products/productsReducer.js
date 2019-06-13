@@ -1,4 +1,4 @@
-import {handleActions} from '@letapp/redux-actions';
+import {handleActions, combineActions} from '@letapp/redux-actions';
 import * as actions from './productsActions';
 
 const INITIAL_STATE = {
@@ -19,11 +19,17 @@ const INITIAL_STATE = {
     isLoading: false,
     isError: false,
     error: null
+  },
+  fetchFavorites: {
+    favorites: [],
+    isLoading: false,
+    isError: false,
+    error: null
   }
 };
 
 export default handleActions({
-  [actions.fetchLatest.start]: (state) => ({
+  [combineActions(actions.fetchLatest.start, actions.updateProduct.start)]: (state) => ({
     ...state,
     latest: {
       ...state.latest,
@@ -41,13 +47,29 @@ export default handleActions({
     },
     user: action.payload
   }),
-  [actions.fetchLatest.error]: (state, action) => ({
+  [combineActions(actions.fetchLatest.error, actions.updateProduct.error)]: (state, action) => ({
     ...state,
     latest: {
       ...state.latest,
       isLoading: false,
       isError: true,
       error: action.payload
+    }
+  }),
+  [actions.updateProduct.success]: (state, action) => ({
+    ...state,
+    latest: {
+      ...state.latest,
+      products: state
+        .latest
+        .products
+        .map(el => el.id === action.payload
+          ? {
+            ...el,
+            like: !el.like
+          }
+          : el),
+      isLoading: false
     }
   }),
   [actions.addProduct.start]: (state) => ({

@@ -1,0 +1,39 @@
+.bgModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15)
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  .panelAddProduct {
+    padding: 5% 14%;
+    width: 79%;
+    height: 874px;
+
+    .namePanel {
+      font-family: Helvetica;
+      font-size: 22px;
+      line-height: 25px;
+      color: #282828;
+      margin: 0;
+    }
+  }
+}
+
+.close {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  color: darkcyan;
+  text-transform: uppercase;
+}

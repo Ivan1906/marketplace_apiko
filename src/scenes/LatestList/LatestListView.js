@@ -3,9 +3,9 @@ import s from './LatestList.module.scss';
 import Header from './../../components/Header/Header';
 import Search from './../../components/Search/Search';
 import Product from '../../components/Product/Product';
-import Api from '../../api';
 
 function LatestListView({products, isLoading, handleClickProduct}) {
+  //console.log(products);
   return (
     <React.Fragment>
       <Header theme="dark">

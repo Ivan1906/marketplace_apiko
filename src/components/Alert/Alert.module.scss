@@ -10,9 +10,12 @@
     padding: 5px;
     background: white;
     min-width: 40vw;
-    min-height: 15vh;
+    min-height: 50vh;
 
     .message {
         text-align: center;
+        flex: 1;
+        color: red;
+        font-size: 32px;
     }
 }

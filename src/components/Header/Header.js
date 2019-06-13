@@ -6,7 +6,7 @@ import heartLight from './Heart_light.svg';
 import heartDark from './Heart_dark.svg';
 import s from './Header.module.scss';
 import Api from '../../api/index';
-import Avatar from '../Avatar/AvatarContainer';
+import AvatarDropDown from '../AvatarDropDown/AvatarDropDownContainer';
 import {routes} from './../../scenes/router';
 
 function Header({theme, children}) {
@@ -42,7 +42,13 @@ function Header({theme, children}) {
           <div className={`${s.center} columnTwo`}>
 
             <div className={s.right}>
-              <Link to={routes.addProduct}>
+              <Link
+                to={{
+                pathname: routes.addProduct,
+                state: {
+                  modal: true
+                }
+              }}>
                 <div className={`${s.btnShell} center`}>shell</div>
               </Link>
             </div>
@@ -56,8 +62,8 @@ function Header({theme, children}) {
           </div>
 
           <div className={`columnThree ${s.btnLogin}`}>
-            {!Api.Auth.isLoggedIn
-              ? <Avatar style={styleAvatar}/>
+            {Api.Auth.isLoggedIn
+              ? <AvatarDropDown style={styleAvatar}/>
               : (
                 <Link
                   to="/login"

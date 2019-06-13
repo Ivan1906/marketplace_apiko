@@ -6,14 +6,14 @@ import PrivateRoute from '../Tools/PrivateRoute/PrivateRoute';
 import LoginContainer from './Login/LoginContainer';
 import RegisterContainer from './Register/RegisterContainer';
 import ProfileContainer from './Profile/ProfileContainer';
-import AddProductContainer from './AddProduct/AddProductContainer';
+//import AddProductContainer from './AddProduct/AddProductContainer';
 import ProductDetailContainer from './ProductDetail/ProductDetailContainer';
-import LatestListContainer from './LatestList/LatestListContainer';
+//import LatestListContainer from './LatestList/LatestListContainer';
 import ResetPasswordContainer from './ResetPassword/ResetPasswordContainer';
 import Listing from './Listing/Listing';
 import UserListings from './UserListings/UserListings';
 import Inbox from './Inbox/Inbox';
-import ModalSwitchConatiner from '../components/Modal/ModalSwitch/ModalSwitchContainer';
+import ModalSwitch from '../components/Modal/ModalSwitch/ModalSwitch';
 
 export const routes = {
   home: '/',
@@ -30,6 +30,7 @@ export const routes = {
   logout: '/logout',
   bookmarks: '/bookmarks',
   privacy: '/privacy',
+  inbox: '/inbox',
   terms: '/terms',
   search: '/search',
   productCreateChat: '/products/:id/createChat'
@@ -40,25 +41,24 @@ function NotFound() {
 }
 
 export default function Router() {
-  
   return (
     <React.Fragment>
       <Switch>
-        <Route exact path={routes.home} component={LatestListContainer}/> {!Api.Auth.isLoggedIn
+        {!Api.Auth.isLoggedIn
           ? (<Route path={routes.login} component={LoginContainer}/>)
           : null}
 
         <Route path={routes.register} component={RegisterContainer}/>
         <Route path={routes.resetPassword} component={ResetPasswordContainer}/>
         <Route path={routes.profile} component={ProfileContainer}/>
-        <Route path={routes.editProfile} component={ProfileContainer}/>
-        <Route path={routes.addProduct} component={AddProductContainer}/>
+        <PrivateRoute path={routes.editProfile} component={ProfileContainer}/>
         <Route path={routes.productDetail} component={ProductDetailContainer}/>
         <Route path={routes.listingsById} component={Listing}/>
         <Route path={routes.userListsings} component={UserListings}/>
         <Route path={routes.userListsings} component={UserListings}/>
         <PrivateRoute path={routes.privacy} component={Inbox}/>
-        <Route component={ModalSwitchConatiner}/>
+        <PrivateRoute path={routes.inbox} component={Inbox}/>
+        <Route component={ModalSwitch}/>
         <Route component={NotFound}/>
       </Switch>
     </React.Fragment>

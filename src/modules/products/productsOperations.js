@@ -80,3 +80,16 @@ export function uploadImages(images) {
     }
   }
 };
+
+export function updateProduct(id) {
+  return async function initThunk(dispatch) {
+    try {
+      dispatch(actions.updateProduct.start());
+
+      dispatch(actions.updateProduct.success(id));
+    } catch (error) {
+      console.error(error);
+      dispatch(actions.updateProduct.error({message: error.message}));
+    }
+  }
+};

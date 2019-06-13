@@ -7,7 +7,6 @@ import Avatar from '../../components/Avatar/AvatarContainer';
 import Button from './../../components/Button/Button';
 import {Link, generatePath} from 'react-router-dom';
 import {routes} from './../router';
-import Api from '../../api';
 
 function ProductDetailView({
   product,
@@ -25,7 +24,7 @@ function ProductDetailView({
     <React.Fragment>
       <Header theme="dark"/>
       <div className={s.container}>
-        
+
         <div className={`${s.product} columnTwo offsetColumnOne`}>
           {props.isLoading && (
             <div>Loading ...</div>
@@ -51,41 +50,41 @@ function ProductDetailView({
                 </div>
               </div>
 
-            <div className={s.columnRight}>
-              <div className={s.userBlock}>
-                <div className={s.headerUserBlock}></div>
-                <div className={s.avatar}>
-                  <Avatar owner={owner} style={styleAvatar}/>
+              <div className={s.columnRight}>
+                <div className={s.userBlock}>
+                  <div className={s.headerUserBlock}></div>
+                  <div className={s.avatar}>
+                    <Avatar owner={owner} style={styleAvatar}/>
+                  </div>
+                  <div className={s.userName}>{owner
+                      ? (
+                        <Link to={routes.home}>{owner.fullName}</Link>
+                      )
+                      : ''}</div>
+                  <div className={s.userLocation}>{owner
+                      ? (
+                        <span>{owner.location}</span>
+                      )
+                      : ''}</div>
                 </div>
-                <div className={s.userName}>{owner
-                    ? (
-                      <Link to={routes.home}>{owner.fullName}</Link>
-                    )
-                    : ''}</div>
-                <div className={s.userLocation}>{owner
-                    ? (
-                      <span>{owner.location}</span>
-                    )
-                    : ''}</div>
-              </div>
 
-              <Link
-                to={{
-                pathname: generatePath(routes.productCreateChat, {id: product.id}),
-                state: {
-                  modal: true
-                }
-              }}>
-                <Button
-                  text="Chat with seller"
-                  disabledBtn
-                  style={{
-                  height: "47px",
-                  margin: "15px 0"
-                }}/>
-              </Link>
-            </div>
-          </React.Fragment>
+                <Link
+                  to={{
+                  pathname: generatePath(routes.productCreateChat, {id: product.id}),
+                  state: {
+                    modal: true
+                  }
+                }}>
+                  <Button
+                    text="Chat with seller"
+                    disabledBtn
+                    style={{
+                    height: "47px",
+                    margin: "15px 0"
+                  }}/>
+                </Link>
+              </div>
+            </React.Fragment>
           )}
         </div>
       </div>

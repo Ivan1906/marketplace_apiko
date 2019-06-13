@@ -29,9 +29,9 @@ class App extends Component {
 };
 
 store.subscribe(() => {
-  console.info('State: ', {
+  /* console.info('State: ', {
     state: store.getState()
-  });
+  }); */
 });
 
 const mapStateToProps = (state) => ({isLoading: state.app.isLoading});

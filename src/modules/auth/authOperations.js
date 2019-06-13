@@ -50,9 +50,9 @@ export function logout() {
     try {
       dispatch(actions.logout.start());
 
-      Api
+      await Api
         .Auth
-        .setToken(null);
+        .logout();
 
       dispatch(actions.register.success());
     } catch (error) {

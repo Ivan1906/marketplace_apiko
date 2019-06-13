@@ -23,7 +23,7 @@ export const Favorites = {
       let favorites = window
         .localStorage
         .getItem('favorites');
-      this.favorites = JSON.parse(favorites);
+      this._favorites = JSON.parse(favorites);
     } catch (e) {
       console.error(e);
     }
