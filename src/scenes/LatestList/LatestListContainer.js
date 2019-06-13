@@ -18,17 +18,25 @@ const mapDispatchToProps = {
 const enhancer = compose(connect(mapStateToProps, mapDispatchToProps), mapProps(props => {
   const favorites = Api.Favorites.getFavorites;
   let products = props.products;
-  favorites.forEach(favorite => products = products.map(product => product.id === favorite
-    ? {
-      ...product,
-      like: true
-    }
-    : product.like
-      ? product
-      : {
+
+  if (typeof favorites.forEach === "function") {
+    favorites.forEach(favorite => products = products.map(product => product.id === favorite
+      ? {
         ...product,
-        like: false
-      }));
+        like: true
+      }
+      : product.like
+        ? product
+        : {
+          ...product,
+          like: false
+        }));
+  } else {
+    products = products.map(product => ({
+      ...product,
+      like: false
+    }));
+  }
 
   return {
     ...props,
